@@ -1,1 +1,298 @@
-vqem
+# ============================================================
+# .gitignore — QEM-GNN Quantum Error Mitigation Project
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+pytestdebug.log
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Profiling
+*.prof
+*.lprof
+
+
+# ------------------------------------------------------------
+# Virtual Environments
+# ------------------------------------------------------------
+vqem/
+venv/
+env/
+.env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+Pipfile.lock
+
+
+# ------------------------------------------------------------
+# Project — Model Checkpoints & Weights
+# ------------------------------------------------------------
+# Saved PyTorch model files can be large (100MB+)
+# Use Git LFS or a model registry (e.g. HuggingFace Hub) instead
+*.pt
+*.pth
+*.ckpt
+*.bin
+
+# Keep the directory structure but not the files
+!models/.gitkeep
+
+
+# ------------------------------------------------------------
+# Project — Datasets
+# ------------------------------------------------------------
+# JSON datasets can be very large depending on num_circuits
+# Store them in cloud storage or DVC instead
+*.json
+# Re-include small config/metadata JSON files that should be tracked
+!pyproject.json
+!package.json
+
+# NumPy binary files (normalisation stats, arrays)
+*.npy
+*.npz
+
+
+# ------------------------------------------------------------
+# Project — Training Outputs & Logs
+# ------------------------------------------------------------
+*.history.json
+*.norm.npz
+*.log
+logs/
+runs/
+tensorboard/
+wandb/
+mlruns/
+
+# Training plots and figures
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
+# Re-include documentation images if you have any
+!docs/**/*.png
+!docs/**/*.jpg
+!assets/**/*.png
+!assets/**/*.jpg
+
+
+# ------------------------------------------------------------
+# Project — Qiskit / Quantum Circuit Outputs
+# ------------------------------------------------------------
+# OpenQASM files exported during experimentation
+*.qasm
+
+# Qiskit job result caches
+qiskit_cache/
+.qiskit/
+
+
+# ------------------------------------------------------------
+# Jupyter Notebooks
+# ------------------------------------------------------------
+# Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Notebook output cells stripped (optional — uncomment if preferred)
+# *.ipynb
+
+
+# ------------------------------------------------------------
+# IDEs and Editors
+# ------------------------------------------------------------
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# Spyder
+.spyderproject.db
+.spyproject/
+
+# Rope
+.ropeproject/
+
+# Eclipse
+.project
+.pydevproject
+.settings/
+.classpath
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+
+# ------------------------------------------------------------
+# Operating System
+# ------------------------------------------------------------
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+
+# ------------------------------------------------------------
+# Environment & Secrets
+# ------------------------------------------------------------
+# Never commit API keys, tokens, or credentials
+.env
+.env.*
+!.env.example
+*.env
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+config.local.py
+ibm_quantum_token.txt
+
+# IBM Quantum / Qiskit Runtime credentials
+qiskit-ibm.json
+.qiskit/qiskit-ibm.json
+
+
+# ------------------------------------------------------------
+# Temporary & Miscellaneous
+# ------------------------------------------------------------
+tmp/
+temp/
+scratch/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+*.swp
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.rar
+*.7z
+
+# Large data files
+*.csv
+*.tsv
+*.hdf5
+*.h5
+*.pkl
+*.pickle
+*.feather
+*.parquet
