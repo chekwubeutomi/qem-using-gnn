@@ -1,0 +1,65 @@
+# ============================================================
+# Quantum Error Mitigation with GNNs — Requirements
+# ============================================================
+# Install with:
+#   pip install -r requirements.txt
+#
+# PyTorch Geometric requires PyTorch to be installed first.
+# Install PyTorch for your platform from https://pytorch.org,
+# then install PyG from https://pytorch-geometric.readthedocs.io
+#
+# Quick install (CPU-only, Linux/macOS):
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+#   pip install torch_geometric
+#   pip install torch_scatter torch_sparse torch_cluster torch_spline_conv \
+#       -f https://data.pyg.org/whl/torch-2.3.0+cpu.html
+#   pip install -r requirements.txt
+# ============================================================
+
+
+# ------------------------------------------------------------
+# Quantum computing (dataset generator)
+# ------------------------------------------------------------
+qiskit>=1.1.0
+qiskit-aer>=0.14.0
+qiskit-ibm-runtime>=0.24.0        # optional: for real device access
+
+# ------------------------------------------------------------
+# Core scientific stack
+# ------------------------------------------------------------
+numpy>=1.26.0
+scipy>=1.13.0
+
+# ------------------------------------------------------------
+# Machine learning — PyTorch (install separately first)
+# ------------------------------------------------------------
+# torch>=2.3.0                    # install from pytorch.org for your CUDA version
+# torchvision>=0.18.0             # optional, pulled in by torch wheel
+
+# ------------------------------------------------------------
+# PyTorch Geometric — GNN layers
+# ------------------------------------------------------------
+torch_geometric>=2.5.3
+# The following PyG optional dependencies enable sparse kernels
+# (required by ASAPooling and some TransformerConv optimisations):
+#   torch_scatter
+#   torch_sparse
+#   torch_cluster
+#   torch_spline_conv
+# Install them from https://data.pyg.org/whl/ matching your torch+CUDA version.
+
+# ------------------------------------------------------------
+# Data handling & ML utilities
+# ------------------------------------------------------------
+scikit-learn>=1.4.0               # train/val/test splitting, StandardScaler
+
+# ------------------------------------------------------------
+# Standard library (no install needed — listed for clarity)
+# ------------------------------------------------------------
+# argparse   — built-in
+# json       — built-in
+# math       — built-in
+# os         — built-in
+# pathlib    — built-in
+# time       — built-in
+# typing     — built-in
