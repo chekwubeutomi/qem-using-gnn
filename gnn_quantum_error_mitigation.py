@@ -516,12 +516,15 @@ def run_training(args):
     model.load_state_dict(ckpt["model_state"])
     test_metrics = evaluate(model, test_loader, device)
 
+    improvement_factor = test_metrics['mse_noisy'] / (test_metrics['mse'] + 1e-12)
+
     print(f"  MSE  (mitigated) : {test_metrics['mse']:.6f}")
     print(f"  MSE  (noisy)     : {test_metrics['mse_noisy']:.6f}")
     print(f"  MAE  (mitigated) : {test_metrics['mae']:.6f}")
     print(f"  MAE  (noisy)     : {test_metrics['mae_noisy']:.6f}")
     print(f"  R²               : {test_metrics['r2']:.4f}")
     print(f"  Mitigation ratio : {test_metrics['mitigation_ratio']*100:.2f}%")
+    print(f"  Improvement factor : {improvement_factor:.2f}x")
 
     # Save training history
     history_path = Path(args.checkpoint).with_suffix(".history.json")
