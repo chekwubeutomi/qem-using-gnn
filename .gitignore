@@ -136,6 +136,9 @@ mlruns/
 !assets/**/*.png
 !assets/**/*.jpg
 
+*.pt
+*.npz
+
 
 # ------------------------------------------------------------
 # Project — Qiskit / Quantum Circuit Outputs

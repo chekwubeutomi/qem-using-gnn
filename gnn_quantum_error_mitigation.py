@@ -399,13 +399,26 @@ def evaluate(
     remaining_error = mse_mitigated
     mitigation_ratio = 1.0 - remaining_error / (noise_error + 1e-12)
 
+    # return {
+    #     "mse"              : mse_mitigated,
+    #     "mae"              : mae_mitigated,
+    #     "mse_noisy"        : mse_noisy,
+    #     "mae_noisy"        : mae_noisy,
+    #     "r2"               : r2,
+    #     "mitigation_ratio" : mitigation_ratio,
+    # }
+
     return {
-        "mse"              : mse_mitigated,
-        "mae"              : mae_mitigated,
-        "mse_noisy"        : mse_noisy,
-        "mae_noisy"        : mae_noisy,
-        "r2"               : r2,
+        "mse" : mse_mitigated,
+        "mae" : mae_mitigated,
+        "mse_noisy" : mse_noisy,
+        "mae_noisy" : mae_noisy,
+        "r2" : r2,
         "mitigation_ratio" : mitigation_ratio,
+        # ADD THESE THREE LINES BELOW:
+        "_preds": preds,      
+        "_targets": targets,  
+        "_noisy": noisy_vals  
     }
 
 
